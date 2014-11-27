@@ -1,0 +1,6 @@
+build/*
+!build/.gitignore
+input/*
+!input/.gitignore
+output/*
+!output/.gitignore
