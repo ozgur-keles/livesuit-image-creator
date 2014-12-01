@@ -313,7 +313,7 @@ do_pack_a20()
         cp bootfs/boot_lvds.axf bootfs/boot.axf -f
         cp bootfs/drv_de_lvds.drv bootfs/drv_de.drv -f
     fi
-    pack_cmd update_mbr sys_partition.bin 4
+    pack_cmd update_mbr sys_partition.bin 2
 
     pack_cmd update_boot0 boot0_nand.bin   sys_config.bin NAND
     pack_cmd update_boot0 boot0_sdcard.fex sys_config.bin SDMMC_CARD
@@ -322,10 +322,6 @@ do_pack_a20()
 
     fsbuild bootfs.ini split_xxxx.fex
 
-    u_boot_env_gen env.cfg env.fex
-
-    #nandc is reserved now
-    echo "null" > ${BUILD_DIR}/boot.fex
     rm -f ${BUILD_DIR}/rootfs.fex
     ln -sv "$ROOTFS" ${BUILD_DIR}/rootfs.fex
 
