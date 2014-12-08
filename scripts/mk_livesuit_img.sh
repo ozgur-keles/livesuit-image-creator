@@ -305,8 +305,8 @@ do_pack_a20()
     fi
 	
     # update bootlogo.bmp
-    if [ -f ${BUILD_DIR}/bootlogo.bmp ]; then
-        cp ${BUILD_DIR}/bootlogo.bmp bootfs/os_show/ -f
+    if [ -f ${IN_DIR}/bootlogo.bmp ]; then
+        cp ${IN_DIR}/bootlogo.bmp bootfs/os_show/ -f
     fi
 
     if [ "$BOARD" = "pcduino3_lvds" ]; then
